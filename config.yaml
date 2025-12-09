@@ -1,0 +1,32 @@
+mqtt:
+  broker: tcp://192.168.124.201:1883
+  user: 
+  password:
+  client_id: goland
+
+log:
+  level: info
+  file: app.log
+  max_size: 10 # in MB
+  max_backups: 5
+  max_age: 30 # in days
+  compress: true
+
+app:
+  di:
+    di1:
+      path: /sys/class/gpio/gpio297/value
+      interval: 1000
+      status-topic: miivii/gpio/di1/status
+    di2:
+      path: /sys/class/gpio/gpio298/value
+      interval: 1000
+      status-topic: miivii/gpio/di1/status
+  do:
+    do1:
+      path: /sys/class/gpio/gpio289/value
+      interval: 1000
+      status-topic: miivii/gpio/do1/status
+      cmd-topic  : miivii/gpio/do1/cmd
+      high-payload: ON
+      low-payload : OFF
