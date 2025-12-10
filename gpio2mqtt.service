@@ -1,0 +1,14 @@
+[Unit]
+Description=gpio2mqtt service
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/etc/gpio2mqtt
+ExecStart=/etc/gpio2mqtt/gpio2mqtt
+Restart=on-failure
+RestartSec=10s
+TimeoutStartSec=30s
+TimeoutStopSec=30s
+
+[Install]
+WantedBy=multi-user.target
